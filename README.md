@@ -1,1 +1,3 @@
-This is a Covid Tracking app.
+###CovidTracker
+This is a Covid Tracking web app.
+Made by Andrew Quan and Derek Yeh
