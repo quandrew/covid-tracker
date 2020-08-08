@@ -3,24 +3,32 @@ import './News.css';
 
 class News extends React.Component {
   
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       articles: []
     };
   }
   
   render() {
-    return <div className="News">
+    return (<div className="News">
       <header className="News-header">
         <h2>News</h2>
       </header>
-    <div>
-      </div>
-    </div>;
+
+        {this.state.articles.map(article => (
+          <a class="newsSection" href={article.webUrl}><div class="newsElementContainer">
+            <h4>{article.title}</h4>
+            <p>{article.excerpt}</p>
+            {article.images != null && <img src={article.images[0].url} alt="hello"/>}
+          </div></a>
+        ))}
+
+    </div>);
   }
   
   componentDidMount() {
+    const that = this;
     var myHeaders = new Headers();
     myHeaders.append("Subscription-Key", "3009d4ccc29e4808af1ccc25c69b4d5d");
     var requestOptions = {
@@ -43,7 +51,7 @@ class News extends React.Component {
             console.log(data.news[0].excerpt);
             console.log(data.news[0].webUrl);
             console.log(data.news[0].images[0].url)
-            this.setState({articles: data});
+            that.setState({'articles': data.news});
           });
         }
       )

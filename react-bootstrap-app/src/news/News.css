@@ -5,6 +5,30 @@
     color: white;
   }
 
-  .News {
-    background-color: black;
+  .newsSection {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .newsElementContainer {
+    background-color: #304153;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: auto;
+  }
+
+  .newsElementContainer h4 {
+    margin: 0;
+  }
+
+  .newsElementContainer p {
+    /* margin: 0; */
+    font-size: 12px;
+  }
+
+  .newsElementContainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
   }
