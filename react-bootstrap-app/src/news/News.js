@@ -5,7 +5,9 @@ class News extends React.Component {
   
   constructor() {
     super();
-    var articles = [];
+    this.state = {
+      articles: []
+    };
   }
   
   render() {
@@ -36,12 +38,12 @@ class News extends React.Component {
           
           // Examine the text in the response
           response.json().then(function(data) {
-            // console.log(data);
-            // console.log(data.news[0].title);
-            // console.log(data.news[0].excerpt);
-            // console.log(data.news[0].webUrl);
-            // console.log(data.news[0].images[0].url)
-            articles = data.news.concat();
+            console.log(data);
+            console.log(data.news[0].title);
+            console.log(data.news[0].excerpt);
+            console.log(data.news[0].webUrl);
+            console.log(data.news[0].images[0].url)
+            this.setState({articles: data});
           });
         }
       )
@@ -49,7 +51,6 @@ class News extends React.Component {
         console.log('Fetch Error :-S', err);
       });
   }
-
 }
 
 export default News;
