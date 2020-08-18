@@ -12,9 +12,6 @@ class News extends React.Component {
   
   render() {
     return (<div className="News">
-      <header className="News-header">
-        <h2>News</h2>
-      </header>
 
         {this.state.articles.map(article => (
           <a class="newsSection" href={article.webUrl}><div class="newsElementContainer">
@@ -50,7 +47,7 @@ class News extends React.Component {
             console.log(data.news[0].title);
             console.log(data.news[0].excerpt);
             console.log(data.news[0].webUrl);
-            console.log(data.news[0].images[0].url)
+            //console.log(data.news[0].images[0].url)
             that.setState({'articles': data.news});
           });
         }

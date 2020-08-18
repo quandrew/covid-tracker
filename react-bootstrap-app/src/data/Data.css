@@ -4,3 +4,8 @@
     font-size: calc(10px + 2vmin);
     color: white;
   }
+  
+.Data {
+  border: black;
+  border-style: solid;
+}

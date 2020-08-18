@@ -15,9 +15,6 @@ class Data extends React.Component {
 
   render() {
     return <div className="Data">
-      <header className="Data-header">
-        <h2>Data</h2>
-      </header>
       <div>
         <Line
           data={this.state.globalData}
